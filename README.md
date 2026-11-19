@@ -1,7 +1,9 @@
 # NIH Chest X-Ray Classification 
 **Final Report:** [PDF](18-Report.pdf)     
 **Authors:** Layth Marabeh, Khanh Phan, Danny Xia       
-**Reach Project Demo:** https://khanhphan.com/NIH-XRay-Segmentation/        
+**Maintained by:** Khanh Phan
+
+**Reach Project Demo:** https://khanhphan.com/NIH-XRay-Classification/        
 **HuggingFace Space:** https://huggingface.co/spaces/k-phantastic/TritoNapse        
 **Dataset Source:** https://www.kaggle.com/datasets/nih-chest-xrays/data
 
@@ -115,6 +117,14 @@ Exploratory data analysis on the metadata file, `Data_Entry_2017.csv` is perform
 | MedViT | 0.8167  |
 
 See individual model README.md files for additional AUC breakdowns and hyperparameter details.
+
+*With further revision, not directly comparable. DenseNet-121 was trained on 14 pathology labels, with "No Finding" images encoded as all zeros, while ResNet-50 and MedViT also predict "No Finding" as its own class. Its score was also measured on the validation split used to select its best checkpoint, and that split came from the official NIH train/val list rather than our shared 70/15/15 patient-level split. The 14-pathology column drops "No Finding" from the ResNet-50 and MedViT averages so the label sets match, but the evaluation data still differs. Addressed further below
+
+---
+
+## Next steps
+
+**Rebuilding DenseNet-121 for a fair comparison.** A new `DenseNet121/` folder will mirror `ResNet50/`: it imports the same data loader and utilities, and uses the same 15 classes, 70/15/15 patient split, input size, class-weight cap, last-block fine-tuning and Optuna tuning budget. The two models will then differ only in architecture. All three models will be scored once on the same held-out test split and reported with both macro AUCs (15 classes and 14 pathologies). The original `Densenet/` folder stays as a record of the first baseline. Work in progress as of November 2026.
 
 --- 
 
