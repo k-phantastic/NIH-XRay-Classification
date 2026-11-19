@@ -21,7 +21,7 @@ This repository contains our capstone project in building a multi-label chest X-
 | [ResNet-50](ResNet50/README.md) | Khanh Phan | CNN, residual skip connections | 512x512 
 | [MedViT](MedVIT/README.md)  | Danny Xia | Vision transformer + metadata fusion | 448x448 
 
-Each model was independently developed and trained; top to bottom being our intiially hypothesized worst to best in performance. All share similar image preprocessing and patient stratified validation/test set methodologies. 
+Each model was independently developed and trained; top to bottom being our initially hypothesized worst to best in performance. All share similar image preprocessing and patient stratified validation/test set methodologies. 
 
 ---
 
@@ -132,7 +132,7 @@ See individual model README.md files for additional AUC breakdowns and hyperpara
 **HuggingFace Space:** https://huggingface.co/spaces/k-phantastic/TritoNapse
 
 
-Introducing TritoNapse- a ploy on UCSD's mascot and Fujifilm's X-ray analysis software, Synapse! As part of our reach goal in building an tangible UI for seeing different model inferences, we created a draft of an application that utilizes the completed trained weights to predict pathologies:
+Introducing TritoNapse- a play on UCSD's mascot and Fujifilm's X-ray analysis software, Synapse! As part of our reach goal in building an tangible UI for seeing different model inferences, we created a draft of an application that utilizes the completed trained weights to predict pathologies:
 
 **Input:** A frontal-view chest X-ray image (PNG or JPG)  
 **Output:** Predicted probabilities for each thoracic pathology (14 conditions + No Finding)
@@ -140,7 +140,7 @@ Introducing TritoNapse- a ploy on UCSD's mascot and Fujifilm's X-ray analysis so
 #### *Figure 5: Demo of website* 
 ![Demo](data/eda_plots/demo.gif)
 
-> This tool is a proof of concept built for research and educational purposes as part of our capstone study. **It is not intended for clinical dianosis of any kind,**
+> This tool is a proof of concept built for research and educational purposes as part of our capstone study. **It is not intended for clinical diagnosis of any kind,**
 
 ### Deployment 
 Each of the model checkpoints are loaded on HuggingFace Spaces with [gradio](https://www.gradio.app/). The website is able to make an API call to retrieve the pathology predictions. 
@@ -159,7 +159,7 @@ Many features were storyboarded with assistance from LLM wrangling of the websit
 | **File Info Panel** | Relevant file details/statistics |
 
 ### Further Reach Features
-This type of tool, while useful in part of our data science lifestyle, should actually be subject to proper production planning and user testing. That being said, early improvements and desires are brainstormed as follows: 
+This type of tool, while useful in part of our data science lifecycle, should actually be subject to proper production planning and user testing. That being said, early improvements and desires are brainstormed as follows: 
 
 | Feature | Goal |
 |---|---|
